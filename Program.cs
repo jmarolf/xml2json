@@ -14,7 +14,7 @@ namespace xml2json
             var doc = new XmlDocument();
             doc.Load(File.OpenRead(path2XmlFile));
             var json = JsonConvert.SerializeXmlNode(doc);
-            var fileName = Path.GetFileName(args[0]).Replace("xml", "json");
+            var fileName = Path.GetFullPath(args[0]).Replace("xml", "json");
             File.WriteAllText(fileName, json);
         }
     }
